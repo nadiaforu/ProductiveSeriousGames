@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Ranking Alamcenes</title>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta http-equiv="X-UA-Conpatible" content="IE=edge"></meta>
+        <h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+        <h:outputStylesheet library="css" name="custom_Almacenes.css"></h:outputStylesheet>
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+    </h:head>
+    <h:body>
+        <nav class="encabezado">
+            <div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation"><a href="#"  role="tab" data-toggle="tab"><img class="id" src="resources/img/icons/user.png"></img></a></li>
+                    <li role="presentation"><a href="#"  role="tab" data-toggle="tab">MI ACTIVIDAD</a></li>
+                    <li role="presentation"><a href="#" role="tab" data-toggle="tab">RANKING ALMACENES</a></li>
+                    <li role="presentation" class="active"><a href="#" role="tab" data-toggle="tab">RANKING EMPLEADOS</a></li>  
+                </ul>
+            </div>
+        </nav>
+        <div class="barra container-fluid">
+            <div class="row">
+                <div class="tab-content">
+                    <div  class="col-md-2">
+                        <img class="logo" src="resources/img/icons/COMMUNITY2.svg" alt="Logo Comunidad"></img>
+                    </div>
+                    <div class="col-md-1">
+                        <div role="tabpanel" class="tab-pane active home">
+                            <button type="button" class="btn btn-primary btn-lg btn-block">DIARIO</button>
+                            <button type="button" class="btn btn-default btn-lg btn-block">SEMANAL</button>
+                            <button type="button" class="btn btn-default btn-lg btn-block">MENSUAL</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">  
+                    <a href="#">
+                        <img class="media-object" src="resources/img/empresas/Logo02.jpg" alt="Foto del Empleado 1"></img>
+                        <div class="caja"><img class="corona" src="resources/img/icons/corona.svg"></img></div>
+                    </a>
+
+                    <a href="#">
+                        <img class="media-object" src="resources/img/empresas/Logo03.jpg" alt="Foto de la Empresa01"></img>
+                        <div class="caja"><span class="numero">2</span></div>
+                    </a>
+                    <a href="#">
+                        <img class="media-object" src="resources/img/empresas/Logo04.jpg" alt="Foto de la Empresa02"></img>
+                        <div class="caja"><span class="numero">3</span></div>
+                    </a>
+                    <a href="#">
+                        <img class="media-object" src="resources/img/empresas/Logo05.jpg" alt="Foto de la Empresa03"></img>
+                        <div class="caja"><span class="numero">4</span></div>
+                    </a>
+                    <a href="#">
+                        <img class="media-object" src="resources/img/empresas/Logo06.jpg" alt="Foto de la Empresa04"></img>
+                        <div class="caja"><span class="numero">5</span></div>
+                    </a>
+                    <a href="#">
+                        <img class="media-object" src="resources/img/empresas/Logo07.jpg" alt="Foto de la Empresa05"></img>
+                        <div class="caja"><span class="numero">6</span></div>
+                    </a>            
+                </div> 
+
+                <div class="margen-usuario">
+                    <div class=" col-md-1">
+                        <a href="#" >
+                            <img class="usuario-top-foto" style="border: #14474b 0.4em solid;" src="resources/img/empresas/Logo01.jpg" alt="Foto del Usuario"></img>
+                        </a>
+                    </div>
+
+                    <div class="usuario-top-txt col-md-2">
+                        <p>Quental</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                <span class="barra-progreso">Nº: 7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <div class="container-fluid">
+            <div class="clearfix"></div>
+            <div class="row barra_2">
+                <p class="col-md-1 titulo">Centro:</p>
+                <select class="col-md-2">
+                    <option value="Opción1">Opción1</option>
+                    <option value="Opción2">Opción2</option>
+                    <option value="Opción3">Opción3</option>
+                    <option value="Opción4">Opción4</option>
+                </select>
+                <p class="col-md-1 titulo">Desde:</p><input type="date" name="fecha" class="col-md-2"></input>
+                <p class="col-md-1 titulo">Hasta:</p><input type="date" name="fecha" class="col-md-2"></input>  
+            </div>
+            <div class="row">
+                <aside class="col-md-4 grafica">
+                    <h:form>
+                        <h:panelGroup id="panel" layout="block" >
+                            <p:chart type="line" model="#{linealBean.lineModel1}" style="height:300px; "/>         
+                        </h:panelGroup>    
+                    </h:form>
+                </aside>
+                <div class="col-md-8">
+                    <h:form>
+                        <h:panelGroup id="panel" layout="block" >
+                            <p:chart type="pie" model="#{productoBean.pieModel}" rendered="#{productoBean.pieModel != null}"/>
+                            <p:chart type="pie" model="#{productoBean2.pieModel}" rendered="#{productoBean2.pieModel != null}"/>
+                            <p:chart type="pie" model="#{productoBean3.pieModel}" rendered="#{productoBean3.pieModel != null}"/>
+                        </h:panelGroup>    
+                    </h:form>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row bottom-aligned">
+                <div class="col-md-1 col-md-offset-2">
+                    <img class="media-object" src="resources/img/empresas/Logo01.jpg" alt="Foto del Empleado 1"></img>
+                </div>
+                <div class="col-md-1">  
+                    <p class="titulo2">Quental</p>      
+                </div>
+                <div class="col-md-1">
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/1.svg" alt="vacío" style="display: none"></img>
+                </div>
+                <div class="col-md-1">    
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/2.svg" alt="vacío" style="display: none"></img>
+                </div>
+                <div class="col-md-1">    
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/5.svg" alt="vacío" style="display: none"></img>
+                </div>
+                <div class="col-md-1">
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/10.svg" alt="vacío" style="display: none"></img>
+                </div>
+                <div class="col-md-1">
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío" style="display: none"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/25.svg" alt="vacío"></img>                 
+                </div>
+                <div class="col-md-1">
+                    <p class="titulo2 positivo">número</p>
+                    <p class="titulo2 negativo" style="display: none">número</p>
+                </div>     
+            </div>
+            <div class="row bottom-aligned">
+                <div class="col-md-1 col-md-offset-2">
+                    <img class="media-object" src="resources/img/empresas/Logo02.jpg" alt="Foto del Empleado 1"></img>
+                </div>
+                <div class="col-md-1">  
+                    <p class="titulo2">Empresa 1</p>      
+                </div>
+                <div class="col-md-1">
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/1.svg" alt="vacío" style="display: none"></img>
+                </div>
+                <div class="col-md-1">    
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío" style="display: none"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/2.svg" alt="vacío"></img>
+                </div>
+                <div class="col-md-1">    
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/5.svg" alt="vacío" style="display: none"></img>
+                </div>
+                <div class="col-md-1">
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/10.svg" alt="vacío" style="display: none"></img>
+                </div>
+                <div class="col-md-1">
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/25.svg" alt="vacío" style="display: none"></img>                 
+                </div>
+                <div class="col-md-1">
+                    <p class="titulo2 positivo"  style="display: none">número</p>
+                    <p class="titulo2 negativo">número</p>
+                </div>     
+            </div>
+            <div class="row bottom-aligned">
+                <div class="col-md-1 col-md-offset-2">
+                    <img class="media-object" src="resources/img/empresas/Logo04.jpg" alt="Foto del Empleado 1"></img>
+                </div>
+                <div class="col-md-1">  
+                    <p class="titulo2">Empresa 2</p>      
+                </div>
+                <div class="col-md-1">
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/1.svg" alt="vacío" style="display: none"></img>
+                </div>
+                <div class="col-md-1">    
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/2.svg" alt="vacío" style="display: none"></img>
+                </div>
+                <div class="col-md-1">    
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/5.svg" alt="vacío" style="display: none"></img>
+                </div>
+                <div class="col-md-1">
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío" style="display: none"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/10.svg" alt="vacío"></img>
+                </div>
+                <div class="col-md-1">
+                    <img class="media-object ver" src="resources/img/puntos/vacio.svg" alt="vacío"></img>
+                    <img class="media-object oculto" src="resources/img/puntos/25.svg" alt="vacío" style="display: none"></img>                 
+                </div>
+                <div class="col-md-1">
+                    <p class="titulo2 positivo">número</p>
+                    <p class="titulo2 negativo" style="display: none">número</p>
+                </div>     
+            </div>
+        </div>
+    </h:body>
+</html>
+

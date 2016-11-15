@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Mi Actividad</title>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta http-equiv="X-UA-Conpatible" content="IE=edge"></meta>
+        <!-- Latest compiled and minified CSS -->
+        <h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>  
+        <h:outputStylesheet library="css" name="custom_MiActividad.css"></h:outputStylesheet>  
+        <h:outputStylesheet library="js" name="Chart.js"></h:outputStylesheet>  
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+    </h:head>
+
+    <h:body>
+        <nav class="encabezado">
+            <div class="row">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#"  role="tab" data-toggle="tab">MI ACTIVIDAD</a></li>
+                    <li role="presentation"><a href="#" role="tab" data-toggle="tab">RANKING ALMACENES</a></li>
+                    <li role="presentation"><a href="#" role="tab" data-toggle="tab">RANKING EMPLEADOS</a></li>  
+                </ul>
+            </div>
+        </nav>
+
+        <div class="barra container-fluid">
+            <div class="row">
+                <h:selectManyListbox class="select">
+                    <option value="1">Septiembre 2016</option> 
+                    <option value="2">Octubre 2016</option> 
+                    <option value="3">Noviembre 2016</option>
+                    <option value="10">Diciembre 2016</option> 
+                    <option value="11">Agosto 2016</option> 
+                    <option value="12">Julio 2016</option> 
+                </h:selectManyListbox>>
+                <div class="margen-usuario">
+                    <div class="col-xs-5 col-md-10">
+                        <a href="#" ><img class="usuario-top-foto" style="border: #14474b 0.4em solid; float: right" src="resources/img/Fotos-Usuarios/mujer7.jpg" alt="Foto del Usuario"></img></a>
+                    </div>
+                    <div class="usuario-top-txt col-md-2">
+                        <p>Daniela García</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                <span class="barra-progreso">40%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row" id="grafica">
+                <div class="col-xs-12 well sinpadding">
+                    <h1 style="text-align: center">AQUÍ VIENE LA GRÁFICA</h1>
+                </div>           
+            </div>
+
+            <div class="row" id="futuras">
+                <div class="col-xs-4 col-md-4">
+                    <h5 class="center-block">Resumen de trabajo</h5>
+                    <div class="gris">
+
+                        <div  class="col-xs-1 col-md-1">
+                            <img class="icono" src="resources/img/miActividad/cronometro.png" alt="icono"></img>
+                        </div>
+                        <div  class="col-xs-11 col-md-11">
+                            <p>8 horas 15 minutos de movimientos</p>
+                        </div>   
+
+                        <div  class="col-xs-1 col-md-1">
+                            <img class="icono" src="resources/img/miActividad/grafica.png" alt="icono"></img>
+                        </div>
+                        <div  class="col-xs-11 col-md-11">
+                            <p>10 usuarios</p>
+                        </div>
+
+                        <div  class="col-xs-1 col-md-1">
+                            <img class="icono" src="resources/img/miActividad/distancia.png" alt="icono"></img>
+                        </div>
+                        <div  class="col-xs-11 col-md-11">
+                            <p>26.9 Km registrados</p>
+                        </div>
+
+                        <div  class="col-xs-1 col-md-1">
+                            <img class="icono" src="resources/img/miActividad/llama.png" alt="icono"></img>
+                        </div>
+                        <div  class="col-xs-11 col-md-11">
+                            <p>5948 Kilocalorías quemadas</p>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="col-xs-4 col-md-4">
+                    <h5 class="center-block">Zonas de frecuencia cardiaca</h5>
+                    <div class="gris">
+                        <script src="resources/js/Chart.js">
+                            //                            Aquí iría la gráfica
+                        </script>
+
+                        <img class="grafCardio" src="resources/img/miActividad/grafCardio.png" alt="Grafica"></img>
+                    </div>
+                </div> 
+                <div class="col-xs-4 col-md-4">
+                    <h5 class="center-block">Eficiencia</h5>
+                    <div class="gris">
+
+                        <img class="grafRosco" src="resources/img/miActividad/grafRosco.png" alt="Grafica"></img>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </h:body>
+</html>
+
